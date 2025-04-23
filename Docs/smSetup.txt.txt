@@ -1,0 +1,38 @@
+conf t
+vlan 2
+ name LAN1
+vlan 3
+ name LAN2
+hostname ???hostname???
+
+!---------------------------------------------------------
+
+interface range ???interfaceType??????1/???0/1 - 12
+des LAN1
+switchport access vlan 2
+ switchport mode access
+!
+interface range ???interfaceType??????1/???0/13 - ???portNum???
+des LAN2
+switchport access vlan 3
+ switchport mode access
+!
+interface ???interfaceType???0/0/0
+
+!---------------------------------------------------------
+
+banner exec ^
+##################################################
+###                CISCO                       ###
+###                  CISCO                     ###
+###                    CISCO                   ###
+###                      CISCO                 ###
+###                        CISCO               ###
+##################################################
+^
+
+banner login ^
+********************************************************************
+****                        DO NOT TOUCH                        ****
+********************************************************************
+^
